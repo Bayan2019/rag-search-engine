@@ -55,6 +55,9 @@ This is where we'll place all our entrypoint scripts to run our various search i
     touch cli/keyword_search_cli.py
     ```
 
+
+### 4. Keyword Search
+
 ## Resources
 
 - [Installing uv](https://docs.astral.sh/uv/getting-started/installation/)

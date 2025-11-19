@@ -1,0 +1,17 @@
+import json
+import os
+
+
+# 1. Preprocessing 4. Keyword Search
+# Truncate the list to a maximum of 5 results, order by IDs ascending.
+DEFAULT_SEARCH_LIMIT = 5
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+DATA_PATH = os.path.join(PROJECT_ROOT, "data", "movies.json")
+
+# 1. Preprocessing 4. Keyword Search
+# Load the data/movies.json file into a Python dictionary
+def load_movies() -> list[dict]:
+    with open(DATA_PATH, "r") as f:
+        data = json.load(f)
+    return data["movies"]
