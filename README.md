@@ -58,6 +58,8 @@ This is where we'll place all our entrypoint scripts to run our various search i
 
 ### 4. Keyword Search
 
+### 5. Text Processing 
+
 ## Resources
 
 - [Installing uv](https://docs.astral.sh/uv/getting-started/installation/)
