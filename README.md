@@ -37,7 +37,23 @@ And "retrieval" is the first component in RAG:
     echo "/data/" >> .gitignore
     ```
 
+### 3. Project Overview
 
+We'll be implementing **Hoopla** as a collection of command line scripts that perform various search operations on a local dataset of movies.
+
+1. In your project's root, create a new `cli` directory. 
+This is where we'll place all our entrypoint scripts to run our various search implementations.
+    ```sh
+    mkdir cli
+    ```
+2. Delete the current `main.py` file – we won't need it.
+    ```sh
+    rm main.py
+    ```
+3. In the cli directory, create a new file called `keyword_search_cli.py`.
+    ```sh
+    touch cli/keyword_search_cli.py
+    ```
 
 ## Resources
 
