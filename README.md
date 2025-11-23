@@ -76,6 +76,8 @@ This is where we'll place all our entrypoint scripts to run our various search i
     * `["running", "jumping"]` becomes `["run", "jump"]`
     * `["watching", "windmills"]` becomes `["watch", "windmill"]`
 
+### 6. Punctuation
+
 ## Resources
 
 - [Installing uv](https://docs.astral.sh/uv/getting-started/installation/)
