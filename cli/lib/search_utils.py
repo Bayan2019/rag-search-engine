@@ -3,7 +3,8 @@ import os
 
 
 # 1. Preprocessing 4. Keyword Search
-# Truncate the list to a maximum of 5 results, order by IDs ascending.
+# Truncate the list to a maximum of 5 results, 
+# order by IDs ascending.
 DEFAULT_SEARCH_LIMIT = 5
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))

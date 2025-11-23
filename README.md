@@ -78,6 +78,8 @@ This is where we'll place all our entrypoint scripts to run our various search i
 
 ### 6. Punctuation
 
+### 7. Tokenization
+
 ## Resources
 
 - [Installing uv](https://docs.astral.sh/uv/getting-started/installation/)
