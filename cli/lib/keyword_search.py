@@ -1,17 +1,20 @@
-from .search_utils import DEFAULT_SEARCH_LIMIT, load_movies
+from .search_utils import DEFAULT_SEARCH_LIMIT, load_movies, load_stopwords
 import string
 
 
 def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[dict]:
     movies = load_movies()
+    stopWords = load_stopwords()
     results = []
+    # 1. Preprocessing 7. Tokenization
+    query_tokens = tokenize_text(query, stopWords)
     # 1. Preprocessing 4. Keyword Search
     # Iterate over all the movies in the list stored under the movies key
     for movie in movies:
         # 1. Preprocessing 7. Tokenization
         # Split the query and the title into tokens
-        query_tokens = tokenize_text(query)
-        title_tokens = tokenize_text(movie["title"])  
+        # query_tokens = tokenize_text(query)
+        title_tokens = tokenize_text(movie["title"], stopWords)  
         # 1. Preprocessing 7. Tokenization
         # Update your matching logic 
         if has_matching_token(query_tokens, title_tokens):
@@ -33,7 +36,7 @@ def preprocess_text(text: str) -> str:
     return text
 
 # 1. Preprocessing 7. Tokenization
-def tokenize_text(text: str) -> list[str]:
+def tokenize_text(text: str, stopWords: list[str]) -> list[str]:
     # We already handled case insensitivity 
     # and punctuation removal in the previous steps.
     text = preprocess_text(text)
@@ -43,7 +46,11 @@ def tokenize_text(text: str) -> list[str]:
     tokens = text.split()
     # 1. Preprocessing 7. Tokenization
     # Remove any empty tokens
-    clean_tokens = [token for token in tokens if token]
+    clean_tokens = [token for token in tokens if token
+                    # 1. Preprocessing 8. Stop Words
+                    # Remove any stop words 
+                    # from the user query tokens and the title tokens 
+                    and token not in stopWords]
     return clean_tokens
 
 # 1. Preprocessing 7. Tokenization

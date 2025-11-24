@@ -80,6 +80,13 @@ This is where we'll place all our entrypoint scripts to run our various search i
 
 ### 7. Tokenization
 
+Tokenization means splitting text into smaller pieces, called tokens.
+
+### 8. Stop Words
+
+Now that we have a list of tokens, we need to decide which ones are actually useful for search. 
+Not all tokens are created equal...
+
 ## Resources
 
 - [Installing uv](https://docs.astral.sh/uv/getting-started/installation/)
