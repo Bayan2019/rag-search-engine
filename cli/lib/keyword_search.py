@@ -2,6 +2,8 @@ from .search_utils import DEFAULT_SEARCH_LIMIT, load_movies, load_stopwords
 import string
 from nltk.stem import PorterStemmer
 
+stemmer = PorterStemmer()
+
 def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[dict]:
     movies = load_movies()
     stopWords = load_stopwords()
@@ -46,7 +48,9 @@ def tokenize_text(text: str, stopWords: list[str]) -> list[str]:
     tokens = text.split()
     # 1. Preprocessing 7. Tokenization
     # Remove any empty tokens
-    clean_tokens = [token for token in tokens if token
+                    # 1. Preprocessing 9.Stemming
+                    # reduce each token to its root
+    clean_tokens = [stemmer.stem(token) for token in tokens if token
                     # 1. Preprocessing 8. Stop Words
                     # Remove any stop words 
                     # from the user query tokens and the title tokens 
