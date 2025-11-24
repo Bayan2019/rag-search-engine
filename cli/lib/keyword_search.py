@@ -1,6 +1,6 @@
 from .search_utils import DEFAULT_SEARCH_LIMIT, load_movies, load_stopwords
 import string
-
+from nltk.stem import PorterStemmer
 
 def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[dict]:
     movies = load_movies()

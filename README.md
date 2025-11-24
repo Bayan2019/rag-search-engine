@@ -87,6 +87,13 @@ Tokenization means splitting text into smaller pieces, called tokens.
 Now that we have a list of tokens, we need to decide which ones are actually useful for search. 
 Not all tokens are created equal...
 
+### 9. Stemming
+
+Install the nltk library:
+```sh
+uv add nltk==3.9.1
+```
+
 ## Resources
 
 - [Installing uv](https://docs.astral.sh/uv/getting-started/installation/)
