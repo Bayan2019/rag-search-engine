@@ -7,9 +7,15 @@ import os
 # order by IDs ascending.
 DEFAULT_SEARCH_LIMIT = 5
 
+# 1. Preprocessing 4. Keyword Search
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+# 1. Preprocessing 4. Keyword Search
 DATA_PATH = os.path.join(PROJECT_ROOT, "data", "movies.json")
+# 1. Preprocessing 8. Stop Words
 STOP_WORDS_PATH = os.path.join(PROJECT_ROOT, "data", "stopwords.txt")
+
+# 2. TF-IDF 1. Inverted Index
+CACHE_DIR = os.path.join(PROJECT_ROOT, "cache")
 
 # 1. Preprocessing 4. Keyword Search
 # Load the data/movies.json file into a Python dictionary

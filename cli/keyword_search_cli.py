@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-from lib.keyword_search import search_command
+from lib.keyword_search import search_command, build_command
 
 # 1. Preprocessing 3. Project Overview
 def main() -> None:
@@ -12,8 +12,10 @@ def main() -> None:
     search_parser = subparsers.add_parser("search", help="Search movies using BM25")
     search_parser.add_argument("query", type=str, help="Search query")
 
+    # 2. TF-IDF 1. Inverted Index
+    build_parser = subparsers.add_parser("build", help="Build the inverted index")
+    
     args = parser.parse_args()
-
 
     match args.command:
         case "search":
@@ -26,6 +28,14 @@ def main() -> None:
             results = search_command(args.query)
             for i, res in enumerate(results, 1):
                 print(f"{i}. {res['title']}")
+
+        case "build":
+            # 2. TF-IDF 1. Inverted Index
+            print("Building inverted index...")
+            build_command()
+            print("Inverted index built successfully.")
+
+
         case _:
             parser.print_help()
 

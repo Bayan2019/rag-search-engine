@@ -94,6 +94,26 @@ Install the nltk library:
 uv add nltk==3.9.1
 ```
 
+## 2. TF-IDF
+
+### 1. Inverted Index
+
+An **inverted index** is what makes search fast – it's like a SQL database index, but for text search. 
+Instead of scanning every document each time a user searches, we build an index for fast lookups.
+
+A "forward index" maps location -> value. 
+An "inverted index" maps value -> location.
+
+### 2.
+
+### 3. 
+
+### 4.
+
+### 5.
+
+### 6.
+
 ## Resources
 
 - [Installing uv](https://docs.astral.sh/uv/getting-started/installation/)

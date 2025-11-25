@@ -9,7 +9,8 @@ wheels/
 # Virtual environments
 .venv
 
-/data/
+data/
+cache/
 
 .DS_Store
 **/.DS_Store
