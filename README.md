@@ -7,7 +7,7 @@ And "retrieval" is the first component in RAG:
 * **A**: **Augment** our instructions with the search results
 * **G**: **Generate** better, richer, and more accurate information using LLMs
 
-## Preprocessing
+## 1. Preprocessing
 
 ### 2. What Is Search?
 
@@ -104,15 +104,35 @@ Instead of scanning every document each time a user searches, we build an index 
 A "forward index" maps location -> value. 
 An "inverted index" maps value -> location.
 
-### 2.
+### 2. Use the Index
 
-### 3. 
+### 3. Boolean Search
 
-### 4.
+### 4. Term Frequency (TF)
 
-### 5.
+### 5. Inverse Document Frequency
 
-### 6.
+### 6. TF-IDF
+
+## 3. Keyword Search
+
+## 4. Semantic Search
+
+## 5. Chunking
+
+## 6. Hybrid Search
+
+## 7. LLMs
+
+## 8. Reranking
+
+## 9. Evaluation
+
+## 10. Augmented Generation
+
+## 11. Agentic 
+
+## 12. Multimodal
 
 ## Resources
 

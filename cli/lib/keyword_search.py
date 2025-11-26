@@ -63,31 +63,54 @@ class InvertedIndex:
         with open(self.docmap_path, 'wb') as file:
             pickle.dump(self.docmap, file)
 
+    # 2. TF-IDF 2. Use the Index
+    # Add a load() method 
+    def load(self)->None:
+        with open(self.index_path, 'rb') as file:
+            self.index = pickle.load(file)
+        with open(self.docmap_path, 'rb') as file:
+            self.docmap = pickle.load(file)
+
 # 2. TF-IDF 1. Inverted Index
 def build_command() -> None:
     idx = InvertedIndex()
     idx.build()
     idx.save()
-    docs = idx.get_documents("merida")
-    print(f"First document for token 'merida' = {docs[0]}")
+    return idx
+
 
 def search_command(query: str, limit: int = DEFAULT_SEARCH_LIMIT) -> list[dict]:
     results = []
     # 1. Preprocessing 7. Tokenization
     query_tokens = tokenize_text(query)
+    # 2. TF-IDF 2. Use the Index
+    # to load the index from disk
+    idx = InvertedIndex()
+    idx.load()
     # 1. Preprocessing 4. Keyword Search
     # Iterate over all the movies in the list stored under the movies key
-    for movie in movies:
+    # 2. TF-IDF 2. Use the Index
+    # Remove your logic for iterating over queries and movies.
+    # 2. TF-IDF 2. Use the Index
+    # Instead, iterate over each token in the query
+    seen = set()
+    for q in query_tokens:
         # 1. Preprocessing 7. Tokenization
         # Split the query and the title into tokens
         # query_tokens = tokenize_text(query)
-        title_tokens = tokenize_text(movie["title"])  
+        # title_tokens = tokenize_text(movie["title"])  
         # 1. Preprocessing 7. Tokenization
         # Update your matching logic 
-        if has_matching_token(query_tokens, title_tokens):
-            results.append(movie)
+        # if has_matching_token(query_tokens, title_tokens):
+        #     results.append(movie)
+        ids = idx.get_documents(q)
+        for id in ids:
+            if id in seen:
+                continue
+            seen.add(id)
+            results.append(idx.docmap[id])
             if len(results) >= limit:
-                break
+                break 
 
     return results
 
